@@ -211,6 +211,9 @@
 .read-only{
     cursor: pointer;
 }
+.table-responsive{
+    margin-top: 10px;
+}
 
 /* ----------------------- media-------------------*/
 
