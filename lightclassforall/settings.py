@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_filters',
-    'django_forest'
+    'django_filters'
 ]
 
 MIDDLEWARE = [
@@ -73,12 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'lightclassforall.wsgi.application'
 
-FOREST = {
-   'FOREST_URL': 'https://api.forestadmin.com',
-   'FOREST_ENV_SECRET': 'a7f9a9fa6b68b3c7d3d0a19b920222c095d61a86674ad13b10b4c52d3e9c3136',
-   'FOREST_AUTH_SECRET': '0e684a1b8f53e31e5c7d3a3201e7155a468bc7b23e28ebac'
-}
-APPEND_SLASH=False
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

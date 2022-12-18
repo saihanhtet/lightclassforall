@@ -125,9 +125,13 @@
     height: 120px;
 }
 
+.flower{
+    background-color: #d1e9e9 !important;
+    color: black !important;
+}
 
 .status-card .card-header{
-    background-color: #85aefd;
+    background-color: #95b4f3;
     color: black;   
 }
 .card{

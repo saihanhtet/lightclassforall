@@ -19,7 +19,6 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('forest', include('django_forest.urls')),
     path("accounts/", include("django.contrib.auth.urls")),
     path('',include('Class.urls')),
 ]
