@@ -1,0 +1,29 @@
+{% extends 'Class/base.html' %}
+
+{% block content %}
+
+<br>
+<!--
+<div class="wrap d-flex" style="float: right;">
+    <a href="" class="btn btn-success btn-sm">ADD</a>
+</div>
+-->
+<div class="row">
+    
+    {% for course in courses %}
+    <div class="col-md-3 col-sm-6">
+        <a href="{% url 'CourseInfo' forloop.counter %}"  style="text-decoration: none;color: black;">
+            <div class="card course-card text-center text-black mb-3 d-flex" id="total-sale">
+                <div class="card-body align-items-center d-flex justify-content-center">
+                    <span class="bg-font  align-items-center d-flex justify-content-center">
+                        <h4 style="text-transform: uppercase;">{{course}}</h4>
+                    </span>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}

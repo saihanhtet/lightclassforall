@@ -1,0 +1,16 @@
+{% load static %}
+
+<nav class="sb-topnav navbar navbar-fixed-top navbar-expand bg-dark">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3" href="{% url 'Home' %}">
+        <img src="{% static 'image/icon/logo-removebg.png' %}" alt="logo" width="50px"> Light Class For All</a>
+    <!-- Navbar-->
+    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4 d-sm-block d-md-none">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item text-black" href="{% url 'Logout' %}" style="color: black;">Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>

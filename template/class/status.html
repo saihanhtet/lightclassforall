@@ -1,0 +1,61 @@
+<h3 style="font-family: 'lobster two',monospace;">Class Information</h3>
+<br>
+
+<div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <a href="{% url 'Student' %}"  style="text-decoration: none;color: black;">
+            <div class="col-md">
+                <div class="card status-card text-center text-black mb-3" id="total-sale">
+                    <div class="card-header">
+                        <h5 class="card-title">Total Student</h5>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{total_student}}</h4>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-md">
+            <a href="{% url 'Completed' %}" style="text-decoration: none;color: black;">
+                <div class="card status-card text-center text-black mb-3" id="total-store">
+                    <div class="card-header">
+                        <h5 class="card-title">Total Completed</h5>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{total_complete}}</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-md">
+            <a href="{% url 'InQuery' %}" style="text-decoration: none;color: black;">
+                <div class="card status-card text-center text-black mb-3" id="total-borrow">
+                    <div class="card-header">
+                        <h5 class="card-title">Total InQuery</h5>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{total_inquery}}</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-md">
+            <a href="{% url 'Dropout' %}" style="text-decoration: none;color: black;">
+                <div class="card status-card text-center text-black mb-3" id="total-borrow">
+                    <div class="card-header">
+                        <h5 class="card-title">Total Resign</h5>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{total_resign}}</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

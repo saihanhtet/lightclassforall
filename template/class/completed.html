@@ -1,0 +1,36 @@
+{% extends 'Class/base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <h5>Information table of students who completed class</h5>
+        <hr>
+        <div class="card card-body">
+            <a href="" class="btn btn-info btn-sm btn-block text-black">ADD Student</a>
+            <table class="table table-sm">
+                <tr>
+                    <th>Roll id</th>
+                    <th>Student</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>More</th>
+                </tr>
+                {% for student in student %}
+                <tr>
+                    <td>{{student.roll_id}}</td>
+                    <td style="text-transform: capitalize;">{{student.student}}</td>
+                    <td>{{student.phone}}</td>
+                    <td>{{student.email}}</td>
+                    <td>
+                        <a href="{% url 'StudentInfo' student.id %}"  class="btn btn-success btn-sm btn-block">View</a>
+                    </td> 
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock content %}

@@ -1,0 +1,68 @@
+
+{% load static %}
+<div class="sidebar" id="layoutSidenav_nav">
+    <nav class="sb-sidenav" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading">Options</div>
+                {% url 'Home' as dashboard_url %}
+                <a class="nav-link  {% if request.path == dashboard_url %}active{% endif %}" href="{{dashboard_url}}">
+                    <i class="fa-solid fa-table-cells-large sb-nav-link-icon"></i>
+                    <span>Dashboard</span>
+                </a>
+                {% url 'Student' as student_url %}
+                <a class="nav-link  {% if request.path == student_url %}active{% endif %}" href="{{student_url}}">
+                    <i class="fa-solid fa-user sb-nav-link-icon"></i>
+                    <span>understudies</span>
+                </a>
+                {% url 'Register' as register_url %}
+                <a class="nav-link  {% if request.path == register_url %}active{% endif %}" href="{{register_url}}">
+                    <i class="fa-solid fa-plus sb-nav-link-icon"></i>
+                    <span>Registration</span>
+                </a>
+                {% url 'Completed' as complete_url %}
+                <a class="nav-link  {% if request.path == complete_url %}active{% endif %}" href="{{complete_url}}">   
+                    <i class="fa-solid fa-trophy sb-nav-link-icon"></i>
+                    <span>Completed</span>
+                </a>
+                {% url 'InQuery' as inquery_url %}
+                <a class="nav-link  {% if request.path == inquery_url %}active{% endif %}" href="{{inquery_url}}">
+                    <i class="fa-solid fa-chart-simple sb-nav-link-icon"></i>
+                    <span>InQuary</span>
+                </a>
+                {% url 'Dropout' as dropout_url %}
+                <a class="nav-link  {% if request.path == dropout_url %}active{% endif %}" href="{{dropout_url}}">
+                    <i class="fa-solid fa-trash sb-nav-link-icon"></i>
+                    <span>ReSign</span>
+                </a>
+                {% url 'Course' as course_url %}
+                <a class="nav-link  {% if request.path == course_url %}active{% endif %}" href="{{course_url}}">
+                    <i class="fa-solid fa-paperclip sb-nav-link-icon"></i>
+                    <span>Courses</span>
+                </a>
+                {% url 'Search' as search_url %}
+                <a class="nav-link  {% if request.path == search_url %}active{% endif %}" href="{{search_url}}">
+                    <i class="fa-solid fa-search sb-nav-link-icon"></i>
+                    <span>Search</span>
+                </a>
+                <hr>
+                <a class="nav-link" href="{% url 'Logout' %}">
+                    <i class="fa-solid fa-right-from-bracket sb-nav-link-icon"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+           
+        </div>
+        <div class="sb-sidenav-footer d-flex" style="background-color: beige;">
+            <div class="small">Logged in as: 
+                {% if user.is_authenticated %}
+                    <p style="text-transform: capitalize;float:right;margin-left: 10px;">{{ user.get_username }}</p>
+                {% else %}
+                    {% url 'Login' %}
+                {% endif %}
+
+            </div>
+            </div>
+    </nav>
+</div>
+
