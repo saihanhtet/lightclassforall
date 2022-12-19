@@ -1,0 +1,50 @@
+{% extends 'Class/base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <h5>Information table of students who dropout during the class</h5>
+        <hr>
+        <div class="card card-body">
+            <a href="" class="btn btn-info btn-sm btn-block text-black">ADD Student</a>
+            {% if student %}
+            <div class="table-responsive">
+                <table class="table table-sm display">
+                    <thead>
+                        <tr>
+                            <th>Student Number</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    {% for student in student %}
+                    <tbody>
+                        <tr>
+                            <td>{{student.roll_id}}</td>
+                            <td>{{student.student}}</td>
+                            <td>{{student.phone}}</td>
+                            <td>{{student.email}}</td>
+                            <td>{{student.course}}</td>
+                            <td>
+                                <a href="{% url 'StudentInfo' student.id %}" class="btn btn-sm btn-success .origin text-white"><i class="fa-solid fa-eye"></i></a>
+                                <a href="{% url 'UpdateStudent' student.id %}" class="btn btn-sm btn-info .origin text-white"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="{% url 'DeleteStudent' student.id %}" class="btn btn-sm btn-danger .origin text-white"><i class="fa-solid fa-trash sb-nav-link-icon"></i></a>
+                            </td> 
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+            {% else %}
+            <h5>No Student Record</h5>
+            {% endif %}
+        </div>
+    </div>
+    
+</div>
+
+{% endblock content %}

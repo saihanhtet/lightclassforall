@@ -1,0 +1,57 @@
+{% extends 'Class/base.html' %}
+
+{% block content %}
+
+<br>
+<div class="row Information">
+    <div class="col-md-5 col-sm-6">
+        <div class="card card-body Information-card">
+            <h5>Student</h5>
+            <hr>
+            <div class="edit">
+                <a href="{% url 'UpdateStudent' student.id %}" class="btn update_student btn-sm">Update Student</a>
+                <a href="{% url 'DeleteStudent' student.id %}" class="btn delete_student btn-sm">Delete Student</a>
+            </div>
+            <a href="" class="btn search_student btn-sm btn-block" type="hidden">Search Student</a>
+        </div>
+    </div>
+    <div class="col-md-5 col-sm-6">
+        <div class="card card-body Information-card">
+            <h5>Contact Information</h5>
+            <p>Student: <span class="customer-name">{{student.student}}</span></p>
+            <p>Email: <span class="customer-email">{{student.email}}</span></p>
+            <p>Phone: <span class="customer-phone">{{student.phone}}</span></p>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Roll Id</th>
+                    <th>Course</th>
+                    <th>Subjects</th>
+                    <th>Register Date</th>
+                    <th>Status</th>
+                </tr>
+            
+                <tr>
+                    <td>{{rollid}}</td>
+                    <td>{{student.course}}</td>
+                    <td>
+                        {%for i in subjects%}
+                        <span style="border: 1px solid lightblue;background-color: lightblue;">{{ i }}</span>
+                        {% endfor %}
+                    </td>   
+                    <td>{{student.date_created}}</td>
+                    <td>{{student.status}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

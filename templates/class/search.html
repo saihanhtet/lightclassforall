@@ -1,0 +1,45 @@
+{% extends 'Class/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <form method="get" class="form-field mt-3">
+        <legend>Search</legend>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="search" id="search" placeholder="Student's Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input class="btn btn-secondary" type="submit" id="button-addon2" value="Search">
+        </div>
+    </form>
+    <form method="get" class="form-field mt-3">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="search2" id="search2" placeholder="Student's Unique ID" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input class="btn btn-secondary" type="submit" id="button-addon2" value="Search">
+        </div>
+    </form>
+    
+    <table class="table .display">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Registered Date</th>
+                <th>Status</th>
+                <th>View</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for student in object_list %}
+            <tr>
+            <td>{{ student.roll_id }}</td>
+            <td style="text-transform: capitalize;">{{student.student}}</td>
+            <td>{{ student.status }}</td>
+            <td><a href="{% url 'StudentInfo' student.id %}" class="btn btn-sm btn-success .origin text-white">View</a></td>
+            <td><a href="{% url 'UpdateStudent' student.id %}" class="btn btn-sm btn-info .origin text-white">Update</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
