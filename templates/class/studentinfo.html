@@ -12,7 +12,7 @@
                 <a href="{% url 'UpdateStudent' student.id %}" class="btn update_student btn-sm">Update Student</a>
                 <a href="{% url 'DeleteStudent' student.id %}" class="btn delete_student btn-sm">Delete Student</a>
             </div>
-            <a href="" class="btn search_student btn-sm btn-block" type="hidden">Search Student</a>
+            <a href="{% url 'Search' %}" class="btn search_student btn-sm btn-block" type="hidden">Search Student</a>
         </div>
     </div>
     <div class="col-md-5 col-sm-6">
