@@ -1,22 +1,18 @@
 import webview
 import threading
-from subprocess import Popen,PIPE,STARTUPINFO,STARTF_USESHOWWINDOW
-from signal import CTRL_BREAK_EVENT
+from subprocess import Popen,PIPE
 
 class myThread (threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
     
     def run(self):
-        startupinfo = STARTUPINFO()
-        startupinfo.dwFlags |= STARTF_USESHOWWINDOW
         global p
-        p = Popen(['python', 'C:\\light\\lightclassforall\\manage.py', 'runserver'],startupinfo=startupinfo,stderr=PIPE, stdout=PIPE)
+        p = Popen(['python', 'C:\\light\\lightclassforall\\manage.py', 'runserver'],stderr=PIPE, stdout=PIPE)
         
     
     def stop(self):
         print ("Exiting server")
-        p.send_signal(CTRL_BREAK_EVENT)
         p.wait()    
 
 thread = myThread()
