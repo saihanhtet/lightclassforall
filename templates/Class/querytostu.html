@@ -1,0 +1,73 @@
+
+{% extends 'Class/base.html' %}
+
+{% block content %}
+
+<main class="Student_register">
+    <div class="container-fluid">
+        <form method="post" action="">	
+            <h1>Update Query Student</h1>
+            <div class="row">
+                {% csrf_token %}
+                <div class="col-md-6">
+                    <div class="InputBox">
+                        {{ form.status.errors }}
+                        <label for="{{ form.status.id_for_label }}">Student's Status</label>
+                        {{ form.status }}          
+                    </div>
+                    <div class="InputBox">
+                        {{ form.student.errors }}
+                        <label for="{{ form.student.id_for_label }}">Student's Name</label>
+                        {{ form.student }}          
+                    </div>
+                    <div class="InputBox">
+                        {{ form.guardian.errors }}
+                        <label for="{{ form.guardian.id_for_label }}">Guardian Name</label>
+                        {{ form.guardian }}               
+                    </div>
+                    <div class="InputBox">
+                        {{ form.phone.errors }}
+                        <label for="{{ form.phone.id_for_label }}">Student's Phone Number</label>
+                        {{ form.phone }}               
+                    </div>
+                    <div class="InputBox">
+                        {{ form.guardian_ph.errors }}
+                        <label for="{{ form.guardian_ph.id_for_label }}">Guardian's Phone Number</label>
+                        {{ form.guardian_ph }}               
+                    </div>
+                    <div class="InputBox">
+                        {{ form.address.errors }}
+                        <label for="{{ form.address.id_for_label }}">Student's Address</label>
+                        {{ form.address }}               
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="InputBox">
+                        {{ form.email.errors }}
+                        <label for="{{ form.email.id_for_label }}">Student's Email</label>
+                        {{ form.email }}               
+                    </div>
+                    <div class="InputBox">
+                        {{ form.subjects.errors }}
+                        <label for="{{ form.subjects.id_for_label }}">Subjects</label>
+                        {{ form.subjects }}               
+                    </div>
+                    <div class="InputBox">
+                        {{ form.course.errors }}
+                        <label for="{{ form.course.id_for_label }}">Course</label>
+                        {{ form.course }}               
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="InputBox-Btn">
+                    
+                    <input class="form-control btn btn-primary register_button" type="submit" value="Update" name="update">
+                    <a href="{% url 'Home' %}" class="form-control btn btn-primary register_button">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+{% endblock content %}
